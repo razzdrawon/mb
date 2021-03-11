@@ -1,0 +1,111 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <!-- .page title -->
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Creacion de usuarios</h4> </div>
+            <!-- /.page title -->
+            <!-- .breadcrumb -->
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <ol class="breadcrumb">
+                    <li><a href="#">Administacion de usuarios</a></li>
+                    <li class="active">Creacion</li>
+                </ol>
+            </div>
+            <!-- /.breadcrumb -->
+        </div>
+        <!-- .row -->
+        <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box p-l-20 p-r-20">
+              <div class="row">
+                <div class="col-md-12">
+                  <form ng-submit="register()" class="form-material form-horizontal">
+                    <div class="form-group">
+                      <label class="col-md-12">Nombre</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.name" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Nombre Estacion A</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.NombreA" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Nombre Estacion B</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.NombreB" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Nombre Patio</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.NombreDePatio" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Tiempo de recorido {{data.NombreA}} - {{data.NombreB}} (en minutos)</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.tiempoDeRecoridoAB" type="number" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Tiempo de retorno {{data.NombreB}} (en minutos)</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.tiempoDeRetornoB" type="number" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Tiempo de recorido {{data.NombreB}} - {{data.NombreA}} (en minutos)</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.tiempoDeRecoridoBA" type="number" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Tiempo de retorno {{data.NombreA}} (en minutos)</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.tiempoDeRetornoA" type="number" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Tiempo de ciclo (en minutos)</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.tiempoDeCiclo" readonly type="number" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Tiempo a patio (en minutos)</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.tiempoDePatio" type="number" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Tipo de camion</label>
+                      <div class="col-md-12">
+                        <select ng-change="setValue()" ng-model="cam" ng-required="!isEdit" class="form-control">
+                          <option ng-repeat="c in camiones" ng-value="c">{{c.nombre}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Factor de ocupacion (en porcentaje)</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.factorDeOcupacion" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+
+                    <button ng-show="isEdit" type="submit" class="btn btn-primary btn-block" name="button">Editar</button>
+                    <button ng-show="!isEdit" type="submit" class="btn btn-primary btn-block" name="button">Agregar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- /.container-fluid -->
+    <footer class="footer text-center"> </footer>
+</div>

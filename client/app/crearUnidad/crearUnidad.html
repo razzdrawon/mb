@@ -1,0 +1,89 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <!-- .page title -->
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Creacion de usuarios</h4> </div>
+            <!-- /.page title -->
+            <!-- .breadcrumb -->
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <ol class="breadcrumb">
+                    <li><a href="#">Administacion de usuarios</a></li>
+                    <li class="active">Creacion</li>
+                </ol>
+            </div>
+            <!-- /.breadcrumb -->
+        </div>
+        <!-- .row -->
+        <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box p-l-20 p-r-20">
+              <div class="row">
+                <div class="col-md-12">
+                  <form ng-submit="register()" class="form-material form-horizontal">
+                    <div class="form-group">
+                      <label class="col-md-12">Modelo</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.modelo" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Marca</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.marca" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Matiricula</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.matricula" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Tarjeta De circulacion</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.tarjetaDeCirculacion" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Poliza de seguro</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.polizaDeSeguro" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Compañia de seguros</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.companiaDeSeguro" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Tipo de camion</label>
+                      <div class="col-md-12">
+                        <select ng-change="setValue()" ng-model="cam" ng-required="!isEdit" class="form-control">
+                          <option ng-repeat="c in camiones" ng-value="c">{{c.nombre}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-12">Empresa</label>
+                      <div class="col-sm-12">
+                        <select ng-model="data.empresaID" required class="form-control">
+                          <option ng-repeat="empresa in empresas" value="{{empresa._id}}">{{empresa.name}}</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <button ng-show="isEdit" type="submit" class="btn btn-primary btn-block" name="button">Editar</button>
+                    <button ng-show="!isEdit" type="submit" class="btn btn-primary btn-block" name="button">Agregar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- /.container-fluid -->
+    <footer class="footer text-center"> </footer>
+</div>

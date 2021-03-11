@@ -1,0 +1,224 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <!-- .page title -->
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Tabla de tiempo</h4> </div>
+            <!-- /.page title -->
+            <!-- .breadcrumb -->
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <ol class="breadcrumb">
+                    <li><a href="#">Rutas</a></li>
+                    <li class="active">Tabla de tiempo</li>
+                </ol>
+            </div>
+            <!-- /.breadcrumb -->
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="white-box">
+              <form class="form-material form-horizontal" style="margin-top: 10px">
+                <div class="row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Codigo</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" ng-model="matrizData.codigo" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="col-md-12">Fecha</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" ng-model="matrizData.fecha" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="col-md-12">Tipo</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" ng-model="matrizData.tipo" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Volumen de diseño</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" ng-model="matrizData.volumenDeDiseno" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Tipo de ciclo</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" ng-model="matrizData.tipoDeCiclo" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Hora de inicio</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" ng-model="matrizData.startHour" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Hora de finalización</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" ng-model="matrizData.endHour" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Periodo</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" ng-model="matrizData.periodo" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Festivo</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" value="No" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Intervalo</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" ng-model="matrizData.intervalo" disabled type="text" class="form-control form-control-line"> Minutos
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Numero de Camiones</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" ng-model="matrizData.numeroDeCamiones" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="row">
+                <div class="col-md-12">
+                  <button type="button" style="border-radius: 0px;" class="btn btn-primary btn-block" ng-click="exportTable()" name="button">Exportar xlsx de matriz</button>
+                </div>
+              </div>
+              <div class="row" style="margin-top: 10px; margin-left:1px; margin-right:1px;">
+                <div class="col-md-4" style="margin:0; padding:0;">
+                  <button type="button" style="border-radius: 0px;" class="btn btn-primary btn-block" ng-click="exportControlDeSalidas(1)" name="button">Exportar control de salidas de {{ruta.NombreDePatio}}</button>
+                </div>
+                <div class="col-md-4" style="margin:0; padding:0;">
+                  <button type="button" style="border-radius: 0px;" class="btn btn-primary btn-block" ng-click="exportControlDeSalidas(2)" name="button">Exportar control de salidas de Estacion {{ruta.NombreA}}</button>
+                </div>
+                <div class="col-md-4" style="margin:0; padding:0;">
+                  <button type="button" style="border-radius: 0px;" class="btn btn-primary btn-block" ng-click="exportControlDeSalidas(3)" name="button">Exportar control de salidas de Estacion {{ruta.NombreB}}</button>
+                </div>
+              </div>
+              <div class="table-responsive" style="margin-top: 10px" ng-show="matriz.length != 0">
+                <table class="table table-bordered" id="tabla">
+                  <thead>
+                    <tr>
+                      <th>Corrida</th>
+                      <th>Empresa</th>
+                      <th>Origen/Destino</th>
+                      <th style="text-align: center;" colspan="18">Numero de vueltas</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3"></th>
+                      <th ng-repeat="vh in vueltasArr track by $index" style="text-align: center;" colspan="1">{{$index + 1}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="mat in matriz">
+                      <td><a ng-click="exportItinerario($index)">{{$index + 1}}</a></td>
+                      <td>{{matrizData.distribucionDeEmpresas[$index]}}</td>
+                      <td style="padding: 0;">
+                        <table class="table table-bordered" style="margin-bottom: 0; border: 0px solid #ddd;">
+                          <tbody>
+                            <tr>
+                              <td>{{ruta.NombreDePatio}}</td>
+                            </tr>
+                            <tr>
+                              <td>{{ruta.NombreA}}</td>
+                            </tr>
+                            <tr>
+                              <td>{{ruta.NombreB}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td ng-repeat="vuel in mat" style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                        <table class="table table-bordered" style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                          <tbody>
+                            <tr>
+                              <td style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                                <table class="table table-bordered" style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                                  <tbody>
+                                    <tr ng-if="$first">
+                                      <td style="width: 50%; height: 37px;">{{calcularSalidaPatio(vuel[0][0])}}</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr ng-if="($last &&  vuel[0][0] != '') || mat[$index + 1][0][0] == ''">
+                                      <td style="width: 50%; height: 37px;"></td>
+                                      <td>{{calcularLlegadaAPatio(vuel[0][1])}}</td>
+                                    </tr>
+                                    <tr ng-if="!(($last &&  vuel[0][0] != '') || mat[$index + 1][0][0] == '') && !$first">
+                                      <td style="width: 50%; height: 37px;"></td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                                <table class="table table-bordered" style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                                  <tbody>
+                                    <tr>
+                                      <td style="width: 50%; height: 37px;">{{vuel[0][0]}}</td>
+                                      <td>{{vuel[0][1]}}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                                <table class="table table-bordered" style="padding: 0; margin: 0">
+                                  <tbody>
+                                    <tr>
+                                      <td style="width: 50%; height: 37px;">{{vuel[1][0]}}</td>
+                                      <td>{{vuel[1][1]}}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+      </div>
+        <!-- .row -->
+    </div>
+    <!-- /.container-fluid -->
+    <footer class="footer text-center"> </footer>
+</div>

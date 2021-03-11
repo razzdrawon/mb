@@ -1,0 +1,85 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <!-- .page title -->
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Creacion de usuarios</h4> </div>
+            <!-- /.page title -->
+            <!-- .breadcrumb -->
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <ol class="breadcrumb">
+                    <li><a href="#">Administacion de usuarios</a></li>
+                    <li class="active">Creacion</li>
+                </ol>
+            </div>
+            <!-- /.breadcrumb -->
+        </div>
+        <!-- .row -->
+        <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box p-l-20 p-r-20">
+              <div class="row">
+                <div class="col-md-12">
+                  <form ng-submit="register()" class="form-material form-horizontal">
+                    <div class="form-group">
+                      <label class="col-md-12">Nombre</label>
+                      <div class="col-md-12">
+                        <input ng-model="user.name" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12" for="example-email">Email </label>
+                      <div class="col-md-12">
+                        <input ng-model="user.email" type="email" required id="example-email2" name="example-email" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Password</label>
+                      <div class="col-md-12">
+                        <input ng-model="user.password" type="password" ng-required="!isEdit" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-12">Tipo de usuario</label>
+                      <div class="col-sm-12">
+                        <select ng-model="user.role" ng-required="!isEdit" class="form-control">
+                          <option value="admin">Gobierno/Admin</option>
+                          <!-- <option value="editor">Editor</option> -->
+                          <option value="user">Empresa</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group" ng-show="user.role == 'user'">
+                      <label class="col-sm-12">Ruta</label>
+                      <div class="col-sm-9">
+                        <select ng-model="rutaSelected" ng-required="!isEdit || user.role == 'user'" class="form-control">
+                          <option ng-repeat="ruta in rutas" ng-value="ruta">{{ruta.name}}</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary btn-block" ng-click="agregarRuta()" name="button">Agregar</button>
+                      </div>
+                      <div class="row" style="margin-top: 10px;" ng-repeat="rutasel in user.rutas">
+                        <div class="col-md-1">
+                          <button type="button" class="close" ng-click="eliminarRuta($index)">
+                            <span aria-hidden="true" style="font-size:40px">&times;</span>
+                          </button>
+                        </div>
+                        <div class="col-md-11" style="font-size:20px; margin-top:10px">
+                          {{rutasel.name}}
+                        </div>
+                      </div>
+                    </div>
+                    <button ng-show="isEdit" type="submit" class="btn btn-primary btn-block" name="button">Editar</button>
+                    <button ng-show="!isEdit" type="submit" class="btn btn-primary btn-block" name="button">Agregar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- /.container-fluid -->
+    <footer class="footer text-center"> </footer>
+</div>

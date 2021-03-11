@@ -1,0 +1,74 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+          <!-- .page title -->
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+              <h4 class="page-title">Matrices de ruta {{ruta.name}}</h4> </div>
+          <!-- /.page title -->
+          <!-- .breadcrumb -->
+          <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+              <ol class="breadcrumb">
+                  <li><a href="#">Administacion de rutas</a></li>
+                  <li class="active">Visualizacion de matrices</li>
+              </ol>
+          </div>
+            <!-- /.breadcrumb -->
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="white-box">
+              <form class="form-horizontal" style="margin-top: 10px">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group" style="margin-bottom: 0;">
+                      <div class="col-md-12">
+                        <p>Nombre: {{ruta.name}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group" style="margin-bottom: 0;">
+                      <div class="col-md-12">
+                        <p>Tiempo de ciclo: {{ruta.tiempoDeCiclo}} minutos</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group" style="margin-bottom: 0;">
+                      <div class="col-md-12">
+                        <p>Tipo de camion: {{ruta.tipoDeCamion}} pasajeros</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group" style="margin-bottom: 0;">
+                      <div class="col-md-12">
+                        <p>Factor de Ocupacion: {{ruta.factorDeOcupacion}}%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- .row -->
+        <div class="row">
+          <div class="col-sm-12">
+              <div class="white-box">
+                  <div class="table-responsive">
+                    <table id="example23" class="display nowrap" cellspacing="0" width="100%"></table>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="row" ng-show="userData.role == 'admin'">
+          <div class="col-md-12">
+            <a class="btn btn-success btn-block" href="/timeTableCreation/{{ruta._id}}">Crear una nueva tabla de tiempo</a>
+          </div>
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- /.container-fluid -->
+    <footer class="footer text-center"> </footer>
+</div>

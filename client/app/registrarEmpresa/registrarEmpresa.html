@@ -1,0 +1,63 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <!-- .page title -->
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Creacion de empresa</h4> </div>
+            <!-- /.page title -->
+            <!-- .breadcrumb -->
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <ol class="breadcrumb">
+                    <li><a href="#">Administacion de empresas</a></li>
+                    <li class="active">Creacion</li>
+                </ol>
+            </div>
+            <!-- /.breadcrumb -->
+        </div>
+        <!-- .row -->
+        <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box p-l-20 p-r-20">
+              <div class="row">
+                <div class="col-md-12">
+                  <form ng-submit="register()" class="form-material form-horizontal">
+                    <div class="form-group">
+                      <label class="col-md-12">Nombre</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.name" type="text" required class="form-control form-control-line">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12" for="example-email">Direccion </label>
+                      <div class="col-md-12">
+                        <input ng-model="data.address" type="text" required id="example-email2" name="example-email" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-12">Telefono</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.phone" type="text" required class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-12">Tipo de empresa</label>
+                      <div class="col-sm-12">
+                        <select ng-model="data.role" required class="form-control">
+                          <option>Publica/Gobierno</option>
+                          <option>Privada</option>
+                        </select>
+                      </div>
+                    </div>
+                    <button ng-show="isEdit" type="submit" class="btn btn-primary btn-block" name="button">Editar</button>
+                    <button ng-show="!isEdit" type="submit" class="btn btn-primary btn-block" name="button">Agregar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- /.container-fluid -->
+    <footer class="footer text-center"> </footer>
+</div>

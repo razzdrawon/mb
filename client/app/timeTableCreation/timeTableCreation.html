@@ -1,0 +1,315 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <!-- .page title -->
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Crear matiz de viajes para ruta: {{ruta.name}}</h4> </div>
+            <!-- /.page title -->
+            <!-- .breadcrumb -->
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+              <ol class="breadcrumb">
+                <li><a href="#">Rutas</a></li>
+                <li class="active">Creacion de tabla de tiempo</li>
+              </ol>
+            </div>
+            <!-- /.breadcrumb -->
+        </div>
+        <!-- .row -->
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="white-box">
+              <form class="form-horizontal" style="margin-top: 10px">
+                <div class="row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Codigo</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.codigo" type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="col-md-12">Fecha</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.fecha" type="text" style="background-color: #FFF;" readonly class="datepicker form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="col-md-12">Tipo</label>
+                      <div class="col-md-12">
+                        <select ng-model="data.tipo" class="form-control form-control-line">
+                          <option>Dia</option>
+                          <option>Noche</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Volumen de diseño</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.volumenDeDiseno" type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Tipo de ciclo</label>
+                      <div class="col-md-12">
+                        <select ng-model="data.tipoDeCiclo" class="form-control form-control-line">
+                          <option>Normal</option>
+                          <option>Especial</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="col-md-12">Hora de inicio</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.startHour" style="background-color: #FFF;" type="text" readonly class="clockpicker form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="col-md-12">Hora de finalización</label>
+                      <div class="col-md-12">
+                        <input ng-model="data.endHour" style="background-color: #FFF;" type="text" readonly class="clockpicker form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="col-md-12">Periodo</label>
+                      <div class="col-md-12">
+                        <select ng-model="data.periodo" class="form-control form-control-line">
+                          <option>Diurno</option>
+                          <option>Nocturno</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="col-md-1">Festivo</label>
+                      <div class="col-md-11">
+                        <input ng-model="data.festivo" type="checkbox">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <form class="form-material form-horizontal" style="margin-top: 10px">
+                <div class="row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Ruta</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" value="{{ruta.name}}" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="col-md-12">Tipo de autobus</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" value="{{ruta.tipoDeCamion}} pasajeros" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Factor de ocupacion</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" value="{{ruta.factorDeOcupacion}}%" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-1">
+                    <div class="form-group">
+                      <label class="col-md-12">Tiempo de ciclo</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" value="{{ruta.tiempoDeCiclo}} Minutos" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Intervalo</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" value="{{intervalo}} minutos" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <label class="col-md-12">Numero de camiones requeridos</label>
+                      <div class="col-md-12">
+                        <input style="background-color: #FFF;" value="{{NumeroDeCamiones}}" disabled type="text" class="form-control form-control-line">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#empresaModal"> Asignar empresas participadoras  </button>
+              <button type="button" class="btn btn-block btn-primary" ng-click="calculateMatix()" name="button"> Calcular Matriz </button>
+              <div class="table-responsive" style="margin-top: 10px" ng-show="matriz.length != 0">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Corrida</th>
+                      <th>Empresa</th>
+                      <th>Origen/Destino</th>
+                      <th style="text-align: center;" colspan="18">Numero de vueltas</th>
+                    </tr>
+                    <tr>
+                      <th colspan="3"></th>
+                      <th ng-repeat="vh in vueltasArr track by $index" style="text-align: center;" colspan="1">{{$index + 1}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="mat in matriz">
+                      <td>{{$index + 1}}</td>
+                      <td>{{distribucionDeEmpresas[$index]}}</td>
+                      <td style="padding: 0;">
+                        <table class="table table-bordered" style="margin-bottom: 0; border: 0px solid #ddd;">
+                          <tbody>
+                            <tr>
+                              <td>{{ruta.NombreDePatio}}</td>
+                            </tr>
+                            <tr>
+                              <td>{{ruta.NombreA}}</td>
+                            </tr>
+                            <tr>
+                              <td>{{ruta.NombreB}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td ng-repeat="vuel in mat" style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                        <table class="table table-bordered" style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                          <tbody>
+                            <tr>
+                              <td style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                                <table class="table table-bordered" style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                                  <tbody>
+                                    <tr ng-if="$first">
+                                      <td style="width: 50%; height: 37px;">{{calcularSalidaPatio(vuel[0][0])}}</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr ng-if="($last &&  vuel[0][0] != '') || mat[$index + 1][0][0] == ''">
+                                      <td style="width: 50%; height: 37px;"></td>
+                                      <td>{{calcularLlegadaAPatio(vuel[0][1])}}</td>
+                                    </tr>
+                                    <tr ng-if="!(($last &&  vuel[0][0] != '') || mat[$index + 1][0][0] == '') && !$first">
+                                      <td style="width: 50%; height: 37px;"></td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                                <table class="table table-bordered" style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                                  <tbody>
+                                    <tr>
+                                      <td style="width: 50%; height: 37px;">{{vuel[0][0]}}</td>
+                                      <td>{{vuel[0][1]}}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 0; margin: 0; border: 0px solid #ddd;">
+                                <table class="table table-bordered" style="padding: 0; margin: 0">
+                                  <tbody>
+                                    <tr>
+                                      <td style="width: 50%; height: 37px;">{{vuel[1][0]}}</td>
+                                      <td>{{vuel[1][1]}}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button type="button" class="btn btn-block btn-primary" ng-show="matriz.length != 0" ng-click="saveMatrix()" name="button"> Guardar </button>
+            </div>
+          </div>
+      </div>
+        <!-- .row -->
+    </div>
+    <!-- /.container-fluid -->
+    <footer class="footer text-center"> </footer>
+</div>
+
+
+<div class="modal" id="empresaModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Asignar empresas</h5>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-9">
+            <select class="form-control form-control-line" ng-model="empresaSelect">
+              <option value="">Selecione una empresa</option>
+              <option ng-repeat="empresa in empresas">{{empresa.name}}</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-primary btn-block" ng-click="agregarEmpresa()" name="button">Agregar</button>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px; margin-bottom:10px;" ng-repeat="emAr in empresasArray">
+          <div class="col-md-1">
+            <button type="button" class="close" ng-click="removeEmpresa($index)">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="col-md-8">
+            {{emAr.name}}
+          </div>
+          <div class="col-md-3">
+            <input type="number" class="form-control form-control-line" ng-change="calulateTotalPorcentage()" ng-model="emAr.porcentage">
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px; margin-bottom:10px;">
+          <div class="col-md-9"></div>
+          <div class="col-md-3">
+            Total: {{totalPorcentage}}%
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="saveEmpresas()">Guardar cambios</button>
+        <button type="button" class="btn btn-secondary" ng-click="deleteEmpresas()" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('.clockpicker').clockpicker({
+    donetext: "Seleccionar"
+  });
+  $('.datepicker').datepicker({
+    format: "dd/mm/yyyy",
+    autoclose: true,
+    todayHighlight: true
+});
+</script>

@@ -1,0 +1,63 @@
+<section id="wrapper" class="login-register">
+  <div class="login-register" style="width: 40%; background: url(assets/images/login.png) center center/cover no-repeat!important"></div>
+  <div class="login-box login-sidebar" style="width: 60%;">
+    <div class="white-box" style="height: 70%;margin-top: 15%;width: 50%;margin-left: 25%;">
+      <form class="form-horizontal form-material" id="loginform" ng-submit="login()">
+        <a href="javascript:void(0)" class="text-center db">
+          <!-- <img src="assets/plugins/images/admin-logo-dark.png" alt="Home" /> -->
+          <br/>
+          <!-- <img src="assets/plugins/images/admin-text-dark.png" alt="Home" /> -->
+        </a>
+
+        <div class="form-group m-t-40">
+          <div class="col-xs-12">
+            <input class="form-control" type="text" ng-model="user.email" required="" placeholder="Correo electronico">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <input class="form-control" type="password" ng-model="user.password" required="" placeholder="Contraseña">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+            <div class="checkbox checkbox-primary pull-left p-t-0">
+              <input id="checkbox-signup" type="checkbox">
+              <label for="checkbox-signup"> Recuerdame </label>
+            </div>
+            <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"> ¿Olvidaste la contraseña?</a>
+          </div>
+        </div>
+        <div class="form-group text-center m-t-20">
+          <div class="col-md-8 col-md-offset-2">
+            <button class="btn btn-primary btn-outline btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Iniciar sesion</button>
+          </div>
+        </div>
+      </form>
+      <form class="form-horizontal" id="recoverform" action="index.html">
+        <div class="form-group ">
+          <div class="col-xs-12">
+            <h3>Recover Password</h3>
+            <p class="text-muted">Enter your Email and instructions will be sent to you! </p>
+          </div>
+        </div>
+        <div class="form-group ">
+          <div class="col-xs-12">
+            <input class="form-control" type="text" required="" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group text-center m-t-20">
+          <div class="col-md-4 col-md-offset-4">
+            <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('navbar').hide();
+    // $('.wrapper').removeClass()
+  });
+</script>
